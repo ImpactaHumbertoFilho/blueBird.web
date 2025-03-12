@@ -2,10 +2,16 @@
 <html>
 <head>
     <title>BlueBird Airlines</title>
-    <script src="js/UsuarioService/UsuarioService.js"></script>
+    <link rel="stylesheet" type="text/css" href="App/shared/shared.css">
 </head>
 <body>
-    <input type="button" value="Cadastrar" onclick="FazerCadastro()"/>
-    <input type="button" value="Login" onclick="FazerLogin()"/>
+    <div class="header">
+        <button onclick="window.location.href='App/Users/Register/ResgiterUser.html'">Cadastro</button>
+        <button onclick="window.location.href='App/Users/Login/LoginUser.html'">Login</button>
+    </div>
+    <div class="container">
+        <h2>Bem-vindo à BlueBird Airlines</h2>
+        <p>Escolha uma opção acima para continuar.</p>
+    </div>
 </body>
 </html>
