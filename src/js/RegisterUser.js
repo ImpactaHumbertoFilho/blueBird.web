@@ -1,4 +1,4 @@
-import { userUrl } from '../Shared/Urls.js';
+import { userUrl } from '../App/Users/Shared/Urls.js';
 
 async function Register(userRegistrationForm){
     const userRegistration = {
@@ -22,11 +22,7 @@ async function Register(userRegistrationForm){
             body: JSON.stringify(userRegistration)
         });
         
-        if (!response.ok) {
-            throw new Error(`Erro HTTP! Status: ${response.status}`);
-        }
-        
-        return
+        return response.json()
     } catch (error) {
         console.error('Erro:', error);
     }
