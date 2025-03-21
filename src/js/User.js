@@ -1,5 +1,8 @@
 const baseUrl = 'https://go-wash-api.onrender.com/api';
 
+//Usuario que criei pra testarmos
+//indre3383@uorak.com
+//123456 
 
 async function FazerLogin(event){
     event.preventDefault();
