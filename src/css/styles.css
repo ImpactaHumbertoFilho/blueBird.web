@@ -84,10 +84,6 @@ main {
     align-items: center;
 }
 
-.upper-section p {
-    text-transform: uppercase;
-    color: #fff;
-}
 
 .upper-section span {
     color: #001F3F;

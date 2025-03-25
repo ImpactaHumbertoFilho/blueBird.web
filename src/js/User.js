@@ -36,15 +36,26 @@ async function FazerLogin(event){
     }
 }
 
-async function Register(userRegistrationForm){
+async function Register(event){
+    event.preventDefault();
+    
+    const form = event.target;
+    const formData = new FormData(form);
+
+    const termos = 0
+    if(formData.get("terms") == "True"){
+        termos = 1
+    }
+    console.log(formData.get("terms"))
+
     const userRegistration = {
-        name: userRegistrationForm.name,
-        email: userRegistrationForm.email,
-        user_type_id: 1,
-        password: userRegistrationForm.password,
-        cpf_cnpj: userRegistrationForm.cpf_cnpj,
-        terms: userRegistrationForm.terms,
-        birthday: userRegistrationForm.birthday
+        name: formData.get("name"),
+        email: formData.get("email"),
+        password: formData.get("password"),
+        cpf_cnpj: formData.get("cpf_cnpj"),
+        terms: termos,
+        birthday: formData.get("birthday"),
+        user_type_id: 1
     };
 
     const headers = {
