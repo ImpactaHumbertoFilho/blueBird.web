@@ -35,40 +35,6 @@ async function FazerLogin(event){
         console.error('Erro:', error);
     }
 }
-
-// async function FazerLogin(event){
-//     event.preventDefault();
-
-//     let email = document.getElementById("email").value
-//     let senha = document.getElementById("senha").value 
-    
-
-//     let loginUsuario =  {
-//         "email": email,
-//         "password": password
-//     }
-
-//     const headers = {
-//         'Content-Type': 'application/json'
-//     }
-
-//     try {    
-//         const response = await fetch(baseUrl + '/login',{
-//             method: "POST",
-//             headers: headers,
-//             body: JSON.stringify(loginUsuario)
-//         });
-        
-//         if (!response.ok) {
-//             throw new Error(`Erro HTTP! Status: ${response.status}`);
-//         }
-        
-//         return
-//     } catch (error) {
-//         console.error('Erro:', error);
-//     }
-// }
-
 async function Register(event){
     event.preventDefault();
 
