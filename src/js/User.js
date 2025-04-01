@@ -35,35 +35,31 @@ async function FazerLogin(event){
         console.error('Erro:', error);
     }
 }
-
 async function Register(event){
     event.preventDefault();
+
+    let name = document.getElementById("name").value
+    let birthday = document.getElementById("birthday").value
+    let email = document.getElementById("email").value
+    let cpf_cnpj = document.getElementById("cpf_cnpj").value
+    let password = document.getElementById("password").value 
     
-    const form = event.target;
-    const formData = new FormData(form);
-
-    const termos = 0
-    if(formData.get("terms") == "True"){
-        termos = 1
+    let userRegistration =  {
+        "name": name,
+        "email": email,
+        "user_type_id": 1,
+        "password": password,
+        "cpf_cnpj": cpf_cnpj,
+        "terms": 1,
+        "birthday": birthday
     }
-    console.log(formData.get("terms"))
-
-    const userRegistration = {
-        name: formData.get("name"),
-        email: formData.get("email"),
-        password: formData.get("password"),
-        cpf_cnpj: formData.get("cpf_cnpj"),
-        terms: termos,
-        birthday: formData.get("birthday"),
-        user_type_id: 1
-    };
 
     const headers = {
         'Content-Type': 'application/json'
     }
 
     try {    
-        const response = await fetch(baseUrl + "/user",{
+        const response = await fetch(baseUrl + '/user', {
             method: "POST",
             headers: headers,
             body: JSON.stringify(userRegistration)
