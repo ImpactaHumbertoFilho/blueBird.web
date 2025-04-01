@@ -69,6 +69,8 @@ async function Register(event){
             throw new Error(`Erro HTTP! Status: ${response.status}`);
         }
         
+        // console.log("Cadastro realizado!")
+        console.log(`${response.status} Cadastro realizado`)
         return
     } catch (error) {
         console.error('Erro:', error);
