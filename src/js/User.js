@@ -1,4 +1,4 @@
-const baseUrl = 'https://go-wash-api.onrender.com/api';
+const baseUrl = 'https://go-wash-api.onrender.com/api/user';
 
 async function FazerLogin(event){
     event.preventDefault();
@@ -50,15 +50,19 @@ async function Register(event){
         "birthday": birthday
     }
 
-    const headers = {
-        'Content-Type': 'application/json'
+    if (userRegistration.password < 6) {
+        alert("A senha deve ter 6 dígitos")
+        return
     }
 
     try {    
-        const response = await fetch(baseUrl + '/user', {
+        const response = await fetch(baseUrl, {
             method: "POST",
-            headers: headers,
-            body: JSON.stringify(userRegistration)
+            body: JSON.stringify(userRegistration),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+            
         });
         
         if (!response.ok) {
@@ -66,7 +70,6 @@ async function Register(event){
             throw new Error(`Erro HTTP! Status: ${response.status}`);
         }
         
-        // console.log("Cadastro realizado!")
         console.log(`${response.status} Cadastro realizado`)
         alert('Cadastro realizado! Verifique seu e-mail')
         return
