@@ -1,4 +1,4 @@
-@import url(../padrao.css);
+@import url(../css/padrao.css);
 
 section.about-azul {
     background: var(--background-home);

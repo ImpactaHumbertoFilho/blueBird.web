@@ -1,4 +1,4 @@
-@import url(../padrao.css);
+@import url(../css/padrao.css);
 header {
     background: var(--primeira-cor);
     box-shadow: var(--box-shadow);
