@@ -1,33 +1,44 @@
+<!-- Define que o tipo de documento é HTML -->
 <!DOCTYPE html>
+<!-- Arquivo principal - HOME -->
+ <!-- Tag html indica que a página será em HTML -->
 <html>
-
-    <head>
+<!-- Head é a cabeça do site, fazemos importações por aqui -->
+    <head> 
         <title>BlueBird Airlines</title>
+        <!-- Importação de arquivos CSS -->
         <link rel="stylesheet" type="text/css" href="./css/padrao.css">
         <link rel="stylesheet" type="text/css" href="./css/header.css">
         <link rel="stylesheet" type="text/css" href="./css/primeira-secao.css">
         <link rel="stylesheet" type="text/css" href="./css/voos-populares.css">
+        <!-- Importação de fontes  -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link
             href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
             rel="stylesheet">
     </head>
-
+<!--Body = corpo do projeto  -->
 <body>
+    <!-- Header é onde fica o menu de navegação -->
     <header>
+        <!-- Classes são como dar nome as tags -->
         <div class="wrapper navbar">
+            <!-- Figure é uma tag que comporta a img (boa prática, opcional) -->
             <figure>
                 <img src="./img/logo.png" alt="Logo" title="Logo">
                 <a href="index.html" title="home" alt="home">BLUEBIRD</a>
             </figure>
+            <!-- nav é uma tag de navegação (menu) -->
             <nav>
                 <a href="register.html">Cadastro</a>
                 <a href="login.html">Login</a>
             </nav>
         </div>
     </header>
+    <!-- Section é onde dividimos as seções do site -->
         <section class="primeira-secao">
+            <!-- A section é pai dessa div, ou seja, no HTML temos hierarquia por quem vem acima -->
             <div class="background">
                 <div class="banner-texto">
                     <h1>BEM-VINDOS À <span><b>BLUEBIRD</b></span>!</h1>
@@ -37,6 +48,7 @@
                 <a href="about.html" title="Saiba mais" class="banner-botao">Sobre nós!</a>
             </div>
         </section>
+        <!-- Como percebe, o texto vai indo cada vez mais pra frente e encerramos a section na mesma linha que começamos -->
         <section class="wrapper voos-populares">
             <div class="align-container">
                 <div class="container-destino">

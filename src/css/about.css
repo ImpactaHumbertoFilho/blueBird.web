@@ -9,8 +9,11 @@ section.about-azul {
 }
 
 .about-titulo-img {
+    /* Flex box, ou seja, alinhamento dos elementos */
     display: flex;
+    /* Decide que os elementos tem um espaço entre eles */
     justify-content: space-between;
+    /* Alinha os elementos no centro */
     align-items: center;
     padding: 4rem 0rem;
 }
