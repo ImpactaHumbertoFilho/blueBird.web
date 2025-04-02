@@ -1,4 +1,4 @@
-@import url(../main.css);
+@import url(../padrao.css);
 header {
     background: var(--primeira-cor);
     box-shadow: var(--box-shadow);
@@ -6,6 +6,16 @@ header {
 .navbar figure {
     width: 7.75rem;
     height: 5.3125rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navbar figure a {
+    color: var(--branco);
+    font-weight: 400;
+    font-size: 1.5rem;
+    letter-spacing: 5px;
+    transition: .5s ease;
 }
 .navbar {
     display: flex;
@@ -22,6 +32,6 @@ nav a {
     padding: 0px 0.625rem 0px 0.625rem;
     transition: 0.5s ease;
 }
-nav a:hover {
+nav a:hover, .navbar figure a:hover {
     color: var(--cinza);
 }

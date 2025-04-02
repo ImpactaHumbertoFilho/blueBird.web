@@ -71,7 +71,7 @@ nav {
 
 
 main {
-    background: url("../lib/img/bg.jpg") no-repeat center center;
+    background: url("../img/bg.jpg") no-repeat center center;
     background-size: cover;
     height: 92vh;
     padding-top: 8vh;
