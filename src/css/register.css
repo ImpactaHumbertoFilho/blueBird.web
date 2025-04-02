@@ -1,143 +1,69 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+@import url(../padrao.css);
 
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-}
-
-header {
-    box-shadow: 0 3px 10px #464646;
-}
-
-a {
-    color: #fff;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-p {
-    color: #001F3F;
-    font-size: 1.2em;
-    text-align: center;
-
-}
-
-a:hover {
-    opacity: 0.7;
-}
-
-.logo {
+.background {
+    background: var(--quarta-cor);
+    height: 100vh;
     display: flex;
     align-items: center;
-    font-size: 24px;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-}
-
-nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background: #001F3F;
-    height: 8vh;
-}
-
-.nav-list {
-    display: flex;
-    list-style: none;
-}
-
-.nav-list li {
-    letter-spacing: 2px;
-    margin-left: 32px;
-}
-
-.login-button button{
-    border: none;
-    background-color: #204264;
-    padding: 10px 15px;
-    border-radius: 5px;
-}
-
-.login-button button a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: 500;
-    font-size: 1.1em;
+    justify-content: center;
 }
 
 
-
-main {
-    background: url("../img/bg.jpg") no-repeat center center;
-    background-size: cover;
-    height: 92vh;
-    padding-top: 8vh;
-}
-
-.upper-section div{
+.forms-caixa {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-
-.upper-section span {
-    color: #001F3F;
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     gap: 15px;
-    background-color: rgba(244, 244, 244, 0.4); /* Add a transparent background */
-    padding: 20px; /* Add padding for spacing inside the container */
-    border-radius: 8px; /* Add rounded corners */
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-    margin: auto; /* Center the container within its parent */
-    max-width: 300px; /* Limit the width of the container */
-    max-height: 600px;
+    background-color: #fff;
+    padding: 2rem;
+    width: 30%;
+    height: 85%;
+    border-radius: 24px;
 }
 
-.container form {
+.forms-caixa form {
     display: flex;
     flex-direction: column; 
     gap: 10px; 
     width: 100%;
     align-items: center;
 }
-
-input[type="text"],
-input[type="email"],
-input[type="password"] {
+.birthday {
+    width: 100%;
+    height: 30px !important;
+    border-radius: 16px;
+    border: 1px solid var(--azul-footer) !important;
+    font-size: 15px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px !important;
+    color: var(--cinza) !important;
+}
+.forms-caixa input {
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 24px;
     padding: 10px; 
     font-size: 1em; 
     width: 100%; 
     box-sizing: border-box;
-    transition: border-color 0.3s;
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="password"]:focus {
-    border-color: #204264;
-    outline: none;
+    transition:r 0.3s;
 }
 
 .secundary-button {
     border: none;
-    background-color: #f15208;
+    background-color: var(--segunda-cor);
     padding: 10px 15px;
     border-radius: 5px;
-    
     color: #fff;
     text-decoration: none;
     font-weight: 500;
     font-size: 1.1em;
+    width: 50% !important;
+    cursor: pointer;
+}
+
+.forms-caixa h2 {
+    color: var(--primeira-cor);
 }

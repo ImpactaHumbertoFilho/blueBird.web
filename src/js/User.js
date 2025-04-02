@@ -62,11 +62,13 @@ async function Register(event){
         });
         
         if (!response.ok) {
+            alert("Erro de cadastro! Valide seus dados")
             throw new Error(`Erro HTTP! Status: ${response.status}`);
         }
         
         // console.log("Cadastro realizado!")
         console.log(`${response.status} Cadastro realizado`)
+        alert('Cadastro realizado! Verifique seu e-mail')
         return
     } catch (error) {
         console.error('Erro:', error);
