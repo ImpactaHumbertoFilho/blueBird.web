@@ -1,25 +1,24 @@
 const baseUrl = 'https://go-wash-api.onrender.com/api/user';
 
-async function FazerLogin(event){
-    event.preventDefault();
+async function FazerLogin(){
+    let email = document.getElementById("email-input").value
+    let password = document.getElementById("password-input").value 
     
-    const form = event.target;
-    const formData = new FormData(form);
-    const loginUsuario = {
-        email: formData.get('loginEmail'),
-        password: formData.get('loginPassword'),
-        user_type_id: 1
-    };
+    let userLogin =  {
+        "email": email,
+        "password": password,
+        "user_type_id": 1
+    }
 
     const headers = {
         'Content-Type': 'application/json'
     }
 
-    try {    
+    try {
         const response = await fetch(baseUrl + '/login',{
             method: "POST",
             headers: headers,
-            body: JSON.stringify(loginUsuario)
+            body: JSON.stringify(userLogin)
         });
         
         if (!response.ok) {
@@ -31,9 +30,7 @@ async function FazerLogin(event){
         console.error('Erro:', error);
     }
 }
-async function Register(event){
-    event.preventDefault();
-
+async function Register(){
     let name = document.getElementById("name").value
     let birthday = document.getElementById("birthday").value
     let email = document.getElementById("email").value

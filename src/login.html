@@ -1,49 +1,58 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
-        <title>BlueBird Airlines - Login</title>
-        <link rel="stylesheet" type="text/css" href="./css/register.css">
+        <title>Login - BlueBird Airlines</title>
         <link rel="stylesheet" type="text/css" href="./css/padrao.css">
+        <link rel="stylesheet" type="text/css" href="./css/header.css">
+        <link rel="stylesheet" type="text/css" href="./css/login.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <script src="./js/User.js"></script>
+        <script type="text/javascript" src="./js/validacao.js" defer></script>
+        
         <link
             href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
             rel="stylesheet">
-        <script src="/js/User.js"></script>
     </head>
 
-    <body>
+    <body class="background">
+        <!-- Header é onde fica o menu de navegação -->
         <header>
+            <!-- Classes são como dar nome as tags -->
             <div class="wrapper navbar">
+                <!-- Figure é uma tag que comporta a img (boa prática, opcional) -->
+                <figure>
+                    <img src="./img/logo.png" alt="Logo" title="Logo">
+                    <a href="index.html" title="home" alt="home">BLUEBIRD</a>
+                </figure>
+                <!-- nav é uma tag de navegação (menu) -->
                 <nav>
                     <a href="register.html">Cadastro</a>
                     <a href="login.html">Login</a>
                 </nav>
             </div>
         </header>
-        <section class="upper-section">
-            <div class="banner-home">
-                <div class="overlay"></div>
-                <div class="banner-texto">
-                    <div class="container">
-                        <h2>Login</h2>
-                        <form id="loginForm" onsubmit="FazerLogin(event)">
-                            <label for="loginEmail">Email:</label>
-                            <input type="email" id="loginEmail" name="loginEmail" required/>
-        
-                            <label for="loginPassword">Senha:</label>
-                            <input type="password" id="loginPassword" name="loginPassword" required/>
-                                
-                            <input class= "secundary-button" type="submit" value="Login"/>
-                        </form>
-        
-                        <p>Ainda não tem conta?</p>
-                        <div class="login-button">
-                            <button><a href="register.html">Cadastre-se</a></button>
-                        </div>
-                    </div>
+
+        <div class="wrapper-login">
+            <h1>Login</h1>
+            <p id="error-message"></p>
+            <form id="Form" onsubmit="FazerLogin()">
+                <div>
+                    <label for="email-input" >
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Z"/></svg>
+                    </label>
+                    <input type="email" id="email-input" name="email-input" placeholder="email"/>    
                 </div>
-            </div>
-        </section>
+                <div>
+                    <label for="password-input">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M240-80q-33 0-56.5-23.5T160-160v-400q0-33 23.5-56.5T240-640h40v-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 56.5T720-80H240Zm240-200q33 0 56.5-23.5T560-360q0-33-23.5-56.5T480-440q-33 0-56.5 23.5T400-360q0 33 23.5 56.5T480-280ZM360-640h240v-80q0-50-35-85t-85-35q-50 0-85 35t-35 85v80Z"/></svg>
+                    </label>
+                    <input type="password" id="password-input" name="password-input" placeholder="senha"/>    
+                </div>
+                <button type="submit">LOGIN</button>
+            </form>
+
+            <p>Ainda não tem conta? <a href="register.html">Cadastre-se</a></p>
+        </div>
     </body>
-</html> -->
+</html>
