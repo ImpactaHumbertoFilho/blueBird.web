@@ -14,7 +14,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* Gap é um espaço que vc mesmo coloca entre os elementos */
+    /* Gap é um espaço entre os elementos */
     gap: 15px;
     background-color: #fff;
     padding: 2rem;

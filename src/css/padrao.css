@@ -11,22 +11,18 @@
     --preto: #000;
     --branco: #fff;
     --box-shadow: 0 0.9375rem 10px -0.9375rem #111;
-    /* Box shadow é uma sombra no elemento (efeito de sombra) */
     --container-destino: #F1F0E8;
-    /* Border-radius é o quão redondo é o elemento */
     --border-radius: 24px;
 }
 html{
-    /* Máximo de largura */
     max-width: 1920px;
-    /* Largura */
     width: 100%;
-    /* Margem (empurra pra fora) */
+
     margin: 0 auto;
 }
 * {
     margin: 0;
-    /* Padding (empurra pra dentro) */
+
     padding: 0;
     box-sizing: border-box;
 }
