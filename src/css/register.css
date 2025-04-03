@@ -32,15 +32,11 @@
 }
 .birthday {
     width: 100%;
-    height: 30px !important;
     border-radius: 16px;
-    border: 1px solid var(--azul-footer) !important;
     font-size: 15px !important;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px !important;
-    color: var(--cinza) !important;
 }
 .forms-caixa input {
     /* borda */
@@ -58,7 +54,7 @@
     padding: 10px 15px;
     border-radius: 5px;
     color: #fff;
-    text-decoration: none;
+    /* text-decoration: none; */
     font-weight: 500;
     font-size: 1.1em;
     width: 50% !important;

@@ -1,36 +1,5 @@
-const baseUrl = 'https://go-wash-api.onrender.com/api/user';
+const url = 'https://go-wash-api.onrender.com/api/user';
 
-async function FazerLogin(event){
-    event.preventDefault();
-    
-    const form = event.target;
-    const formData = new FormData(form);
-    const loginUsuario = {
-        email: formData.get('loginEmail'),
-        password: formData.get('loginPassword'),
-        user_type_id: 1
-    };
-
-    const headers = {
-        'Content-Type': 'application/json'
-    }
-
-    try {    
-        const response = await fetch(baseUrl + '/login',{
-            method: "POST",
-            headers: headers,
-            body: JSON.stringify(loginUsuario)
-        });
-        
-        if (!response.ok) {
-            throw new Error(`Erro HTTP! Status: ${response.status}`);
-        }
-        
-        return
-    } catch (error) {
-        console.error('Erro:', error);
-    }
-}
 async function Register(event){
     event.preventDefault();
 
@@ -49,14 +18,18 @@ async function Register(event){
         "terms": 1,
         "birthday": birthday
     }
+    if (password.length < 6) {
+        alert('A senha deve ter 6 dígitos')
+        return
+    }
 
-    if (userRegistration.password < 6) {
-        alert("A senha deve ter 6 dígitos")
+    if (cpf_cnpj.length < 11 || cpf_cnpj.length > 15 ){
+        alert('Verifique a quantidade de dígitos do cpf cnpj')
         return
     }
 
     try {    
-        const response = await fetch(baseUrl, {
+        const response = await fetch(url, {
             method: "POST",
             body: JSON.stringify(userRegistration),
             headers: {

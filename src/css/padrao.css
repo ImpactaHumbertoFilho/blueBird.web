@@ -1,5 +1,3 @@
-/* CSS padrão onde guarda as váriaveis e configurações gerais */
-/* Váriavel de cores e  outros atributos*/
 :root
 {
     --background: #fefefe;
@@ -33,7 +31,6 @@ html{
     box-sizing: border-box;
 }
 body {
-    /* Fonte usada no site */
     font-family: "Poppins", sans-serif;
     background-color: var(--background);
 }
@@ -46,13 +43,11 @@ figure {
     margin: 0;
 }
 h1 {
-    /* Tamanho da letra */
     font-size: 1.6875rem;
 }
 h2 {
     font-size: 1.5rem;
 }
 a {
-    /* Decoração do texto */
     text-decoration: none;
 }
