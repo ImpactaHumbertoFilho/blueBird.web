@@ -1,3 +1,5 @@
+import { Register, FazerLogin } from "./User.js";
+
 const form = document.getElementById('Form');
 
 const nameInput = document.getElementById("name-input")
@@ -19,24 +21,30 @@ allInputs.forEach(input => {
     })
 })
 
-form.addEventListener('submit', (e) => {
+form.addEventListener('submit', async (e) => { // Torne a função assíncrona
+    e.preventDefault(); // Previna o comportamento padrão do formulário
 
     let erros = [];
-
-    if(nameInput){
-        erros = coletarCadastroFormErros(emailInput.value, senhaInput.value, nameInput.value, birthdayInput.value, cpf_cnpjInput.value, termsInput.value)
+    
+    if (nameInput) {
+        //erros = coletarCadastroFormErros(emailInput.value, senhaInput.value, nameInput.value, birthdayInput.value, cpf_cnpjInput.value, termsInput.value);
+        if (erros.length === 0){
+            const response = await Register();
+            console.log(response.message)
+            coletarCadastroApiErros(response);
+        }
+    } else {
+        //erros = coletarLoginFormErros(emailInput.value, senhaInput.value);
+        if (erros.length === 0){
+            const response = await FazerLogin();
+            console.log(response.message)
+        }
     }
-    else{
-        erros = coletarLoginFormErros(emailInput.value, senhaInput.value)
-    }
 
-    console.log(erros)
     if (erros.length > 0) {
         error_message.innerText = erros.join('. ');
     }
-    
-    e.preventDefault();
-})
+});
 
 function coletarLoginFormErros(email, senha) {
     let erros = [];
@@ -54,14 +62,48 @@ function coletarLoginFormErros(email, senha) {
     return erros;
 }
 
-function coletarCadastroFormErros(email, senha, nome, aniversario, cpf_cnpj, termos) {
+function coletarCadastroApiErros(response) {
     let erros = [];
 
+    if (response.status === 422) {
+        const apiErrors = response.message.data.errors;
+
+        for (const [field, messages] of Object.entries(apiErrors)) {
+            const inputElement = document.getElementById(`${field}-input`);
+            if (inputElement) {
+                inputElement.parentElement.classList.add('incorreto');
+            }
+            erros.push(...messages);
+        }
+
+        error_message.innerText = erros.join('. ');
+    }
+
+    return erros;
+}
+
+function coletarCadastroFormErros(email, senha, nome, aniversario, cpf_cnpj, termos) {
+    let erros = [];
+    console.log(email, senha, nome, aniversario, cpf_cnpj, termos)
+    if (aniversario === '') {
+        erros.push('A data de aniversário é obrigatória');
+        birthdayInput.parentElement.classList.add('incorreto');
+    }
+    
+    if (cpf_cnpj === '') {
+        erros.push('O CPF ou CNPJ é obrigatório');
+        cpf_cnpjInput.parentElement.classList.add('incorreto');
+    }
+    
+    if (termos === '') {
+        erros.push('O termo é obrigatório');
+        termsInput.parentElement.classList.add('incorreto');
+    }
+    
     if (nome === '') {
         erros.push('O nome é obrigatório');
         nameInput.parentElement.classList.add('incorreto');
     }
-    
 
     if (!/\S+@\S+\.\S+/.test(email)) {
         erros.push('Por favor, insira um endereço de e-mail válido');

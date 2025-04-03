@@ -1,4 +1,4 @@
-const baseUrl = 'https://go-wash-api.onrender.com/api/user';
+const baseUrl = 'https://go-wash-api.onrender.com/api';
 
 async function FazerLogin(){
     let email = document.getElementById("email-input").value
@@ -14,28 +14,25 @@ async function FazerLogin(){
         'Content-Type': 'application/json'
     }
 
-    try {
-        const response = await fetch(baseUrl + '/login',{
-            method: "POST",
-            headers: headers,
-            body: JSON.stringify(userLogin)
-        });
-        
-        if (!response.ok) {
-            throw new Error(`Erro HTTP! Status: ${response.status}`);
-        }
-        
-        return
-    } catch (error) {
-        console.error('Erro:', error);
+    const response = await fetch(baseUrl + '/login',{
+        method: "POST",
+        headers: headers,
+        body: JSON.stringify(userLogin)
+    });
+    
+    let result = await response.json()
+    
+    return {
+        status: response.status,
+        message: result
     }
 }
 async function Register(){
-    let name = document.getElementById("name").value
-    let birthday = document.getElementById("birthday").value
-    let email = document.getElementById("email").value
-    let cpf_cnpj = document.getElementById("cpf_cnpj").value
-    let password = document.getElementById("password").value 
+    let name = document.getElementById("name-input").value
+    let birthday = document.getElementById("birthday-input").value
+    let email = document.getElementById("email-input").value
+    let cpf_cnpj = document.getElementById("cpf_cnpj-input").value
+    let password = document.getElementById("password-input").value 
     
     let userRegistration =  {
         "name": name,
@@ -47,30 +44,20 @@ async function Register(){
         "birthday": birthday
     }
 
-    if (userRegistration.password < 6) {
-        alert("A senha deve ter 6 dígitos")
-        return
-    }
-
-    try {    
-        const response = await fetch(baseUrl, {
-            method: "POST",
-            body: JSON.stringify(userRegistration),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-            
-        });
-        
-        if (!response.ok) {
-            alert("Erro de cadastro! Valide seus dados")
-            throw new Error(`Erro HTTP! Status: ${response.status}`);
+    const response = await fetch(baseUrl + '/user', {
+        method: "POST",
+        body: JSON.stringify(userRegistration),
+        headers: {
+            'Content-Type': 'application/json'
         }
-        
-        console.log(`${response.status} Cadastro realizado`)
-        alert('Cadastro realizado! Verifique seu e-mail')
-        return
-    } catch (error) {
-        console.error('Erro:', error);
+    });
+    
+    let result = await response.json()
+    
+    return {
+        status: response.status,
+        message: result
     }
 }
+
+export { FazerLogin, Register };
