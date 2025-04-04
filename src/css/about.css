@@ -1,5 +1,7 @@
 @import url(../css/padrao.css);
 
+
+
 section.about-azul {
     background: var(--background-home);
 }
@@ -21,6 +23,13 @@ section.about-azul {
 }
 
 .texto-about {
-    font-size: 1.2rem;
+    position: relative;
+    top: -3rem;
+    z-index: 10;
+    font-size: 1.5rem;
     padding: 3rem 4rem;
+    background-color: var(--container-destino);
+    border: 1px solid var(--cinza);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
 }

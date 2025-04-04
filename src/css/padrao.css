@@ -15,12 +15,9 @@
     --border-radius: 24px;
 }
 html{
-    max-width: 1920px;
     width: 100%;
     margin: 0;
-
     padding: 0;
-
     text-align: center;
 }
 * {
@@ -29,6 +26,7 @@ html{
     box-sizing: border-box;
 }
 body {
+    min-height: 100vh;
     font-family: "Poppins", sans-serif;
     background-color: var(--background);
 }
@@ -49,4 +47,13 @@ h2 {
 a {
     text-decoration: none;
     color: var(--terceira-cor);
+}
+
+.background{
+    background-color: var(--background-home);
+    background-image: url(../img/banner-teste.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
 }
