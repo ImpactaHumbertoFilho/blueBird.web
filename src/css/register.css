@@ -14,10 +14,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-<<<<<<< HEAD
-=======
-    /* Gap é um espaço entre os elementos */
->>>>>>> e611d501e673b248d85bb9ab9186ce6b6aeaca50
     gap: 15px;
     background-color: #fff;
     padding: 2rem;

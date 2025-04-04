@@ -17,18 +17,10 @@
 html{
     max-width: 1920px;
     width: 100%;
-<<<<<<< HEAD
-=======
-
->>>>>>> e611d501e673b248d85bb9ab9186ce6b6aeaca50
     margin: 0 auto;
 }
 * {
     margin: 0;
-<<<<<<< HEAD
-=======
-
->>>>>>> e611d501e673b248d85bb9ab9186ce6b6aeaca50
     padding: 0;
     box-sizing: border-box;
 }

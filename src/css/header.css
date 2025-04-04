@@ -18,11 +18,8 @@ header {
     transition: .5s ease;
 }
 .navbar {
-       /* prop que define como vai ser exibido os elementos */
     display: flex;
-     /* vertical */
     align-items: center;
-     /* horizontal */
     justify-content: space-between;
     flex-wrap: nowrap;
 }
