@@ -50,7 +50,6 @@ a {
 }
 
 .background{
-    background-color: var(--background-home);
     background-image: url(../img/banner-teste.jpg);
     background-size: cover;
     background-position: center;
