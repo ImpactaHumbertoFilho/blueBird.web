@@ -34,6 +34,10 @@ async function Register(name, birthday, email, cpf_cnpj, password){
         "terms": 1,
         "birthday": birthday
     }
+    if (password.length < 6) {
+        alert('A senha deve ter 6 dígitos')
+        return
+    }
 
     const response = await fetch(baseUrl + '/user', {
         method: "POST",
