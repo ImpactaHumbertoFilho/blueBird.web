@@ -6,7 +6,7 @@ header {
 .navbar figure {
     width: 7.75rem;
     height: 5.3125rem;
-    display: flex;
+    display: flex; 
     justify-content: center;
     align-items: center;
 }
@@ -18,8 +18,11 @@ header {
     transition: .5s ease;
 }
 .navbar {
+       /* prop que define como vai ser exibido os elementos */
     display: flex;
+     /* vertical */
     align-items: center;
+     /* horizontal */
     justify-content: space-between;
     flex-wrap: nowrap;
 }

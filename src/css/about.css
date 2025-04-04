@@ -9,7 +9,15 @@ section.about-azul {
 }
 
 .about-titulo-img {
+<<<<<<< HEAD
     display: flex;
+=======
+    /* prop que define como vai ser exibido os elementos */
+    display: flex;
+    /* horizontal */
+    justify-content: space-between;
+    /* vertical */
+>>>>>>> e611d501e673b248d85bb9ab9186ce6b6aeaca50
     align-items: center;
     padding: 4rem 0rem;
 }
