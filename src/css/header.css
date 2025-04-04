@@ -5,7 +5,6 @@ header {
 }
 .navbar figure {
     width: 7.75rem;
-    /* Altura */
     height: 5.3125rem;
     display: flex;
     justify-content: center;
@@ -13,7 +12,6 @@ header {
 }
 .navbar figure a {
     color: var(--branco);
-    /* Grossura da letra */
     font-weight: 400;
     font-size: 1.5rem;
     letter-spacing: 5px;
@@ -23,7 +21,6 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* Ou seja, os itens não vão descer mesmo se não houver espaço */
     flex-wrap: nowrap;
 }
 nav a {

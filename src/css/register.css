@@ -14,7 +14,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* Gap é um espaço que vc mesmo coloca entre os elementos */
     gap: 15px;
     background-color: #fff;
     padding: 2rem;
@@ -39,7 +38,6 @@
     justify-content: center;
 }
 .forms-caixa input {
-    /* borda */
     border: 1px solid #ccc;
     border-radius: 24px;
     padding: 10px; 
@@ -54,11 +52,9 @@
     padding: 10px 15px;
     border-radius: 5px;
     color: #fff;
-    /* text-decoration: none; */
     font-weight: 500;
     font-size: 1.1em;
     width: 50% !important;
-    /* O mouse estará no modo (aponte) */
     cursor: pointer;
 }
 

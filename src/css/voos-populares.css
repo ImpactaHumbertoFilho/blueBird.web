@@ -6,11 +6,9 @@
 .container-destino {
     background-color: var(--container-destino);
     border-radius: var(--border-radius);
-    /* Sombra do elemento */
     box-shadow: var(--box-shadow);
     width: 55rem;
     height: 10rem;
-    /* Ele pode sobrepor outros elementos */
     position: absolute;
 }
 .container-destino figure, .container-destino figure img{
