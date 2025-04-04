@@ -7,11 +7,11 @@ const birthdayInput = document.getElementById("birthday-input")
 const cpf_cnpjInput = document.getElementById("cpf_cnpj-input")
 const termsInput = document.getElementById("terms-input")
 const emailInput = document.getElementById('email-input');
-const senhaInput = document.getElementById('password-input');
+const passwordInput = document.getElementById('password-input');
 
 const error_message = document.getElementById('error-message');
 
-const allInputs = [emailInput, senhaInput, nameInput, birthdayInput, cpf_cnpjInput, termsInput].filter(input => input !== null);
+const allInputs = [emailInput, passwordInput, nameInput, birthdayInput, cpf_cnpjInput, termsInput].filter(input => input !== null);
 allInputs.forEach(input => {
     input.addEventListener('input', () => {
         if (input.parentElement.classList.contains('incorreto')) {
@@ -21,22 +21,22 @@ allInputs.forEach(input => {
     })
 })
 
-form.addEventListener('submit', async (e) => { // Torne a função assíncrona
-    e.preventDefault(); // Previna o comportamento padrão do formulário
+form.addEventListener('submit', async (e) => {
+    e.preventDefault();
 
     let erros = [];
     
     if (nameInput) {
-        //erros = coletarCadastroFormErros(emailInput.value, senhaInput.value, nameInput.value, birthdayInput.value, cpf_cnpjInput.value, termsInput.value);
+        erros = coletarCadastroFormErros(emailInput.value, passwordInput.value, nameInput.value, birthdayInput.value, cpf_cnpjInput.value, termsInput.checked);
         if (erros.length === 0){
-            const response = await Register();
+            const response = await Register(nameInput.value, birthdayInput.value, emailInput.value, cpf_cnpjInput.value, passwordInput.value);
             console.log(response.message)
             coletarCadastroApiErros(response);
         }
     } else {
-        //erros = coletarLoginFormErros(emailInput.value, senhaInput.value);
+        erros = coletarLoginFormErros(emailInput.value, passwordInput.value);
         if (erros.length === 0){
-            const response = await FazerLogin();
+            const response = await FazerLogin(emailInput.value, passwordInput.value);
             console.log(response.message)
         }
     }
@@ -56,7 +56,7 @@ function coletarLoginFormErros(email, senha) {
 
     if (senha.length < 6) {
         erros.push('A senha deve ter pelo menos 6 caracteres');
-        senhaInput.parentElement.classList.add('incorreto');
+        passwordInput.parentElement.classList.add('incorreto');
     }
 
     return erros;
@@ -84,7 +84,6 @@ function coletarCadastroApiErros(response) {
 
 function coletarCadastroFormErros(email, senha, nome, aniversario, cpf_cnpj, termos) {
     let erros = [];
-    console.log(email, senha, nome, aniversario, cpf_cnpj, termos)
     if (aniversario === '') {
         erros.push('A data de aniversário é obrigatória');
         birthdayInput.parentElement.classList.add('incorreto');
@@ -95,7 +94,8 @@ function coletarCadastroFormErros(email, senha, nome, aniversario, cpf_cnpj, ter
         cpf_cnpjInput.parentElement.classList.add('incorreto');
     }
     
-    if (termos === '') {
+    console.log(termos)
+    if (!termos) {
         erros.push('O termo é obrigatório');
         termsInput.parentElement.classList.add('incorreto');
     }
@@ -112,7 +112,7 @@ function coletarCadastroFormErros(email, senha, nome, aniversario, cpf_cnpj, ter
 
     if (senha.length < 6) {
         erros.push('A senha deve ter pelo menos 6 caracteres');
-        senhaInput.parentElement.classList.add('incorreto');
+        passwordInput.parentElement.classList.add('incorreto');
     }
 
     return erros;

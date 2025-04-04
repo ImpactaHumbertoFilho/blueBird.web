@@ -1,9 +1,6 @@
 const baseUrl = 'https://go-wash-api.onrender.com/api';
 
-async function FazerLogin(){
-    let email = document.getElementById("email-input").value
-    let password = document.getElementById("password-input").value 
-    
+async function FazerLogin(email, password){
     let userLogin =  {
         "email": email,
         "password": password,
@@ -27,13 +24,7 @@ async function FazerLogin(){
         message: result
     }
 }
-async function Register(){
-    let name = document.getElementById("name-input").value
-    let birthday = document.getElementById("birthday-input").value
-    let email = document.getElementById("email-input").value
-    let cpf_cnpj = document.getElementById("cpf_cnpj-input").value
-    let password = document.getElementById("password-input").value 
-    
+async function Register(name, birthday, email, cpf_cnpj, password){
     let userRegistration =  {
         "name": name,
         "email": email,

@@ -107,11 +107,40 @@ form p{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 10px;
 }
 
-div input[type="checkbox"] {
+/* Hide the default checkbox */
+form input[type="checkbox"] {
+    display: none; /* Hides the default checkbox */
+}
+
+/* Style the custom checkbox */
+form input[type="checkbox"] + label {
+    display: inline-block;
     width: 30px;
     height: 30px;
+    border: 2px solid var(--terceira-cor);
+    border-radius: 4px;
+    background-color: var(--background);
+    cursor: pointer;
+    position: relative;
+    transition: background-color 150ms ease, border-color 150ms ease;
+}
+
+form input[type="checkbox"]:checked + label {
+    background-color: var(--terceira-cor);
+    border-color: var(--terceira-cor);
+}
+
+form input[type="checkbox"]:checked + label:before {
+    content: '✔';
+    color: var(--background); 
+    font-size: 18px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 form button:hover{
@@ -140,6 +169,16 @@ form div.incorreto label{
 form div.incorreto input{
     border: 2px solid var(--segunda-cor);
 }
+
+form div.incorreto p{
+    color: var(--segunda-cor);
+}
+
+form div.incorreto input[type="checkbox"] + label {
+    border: 2px solid var(--segunda-cor);
+    background-color: var(--background);
+}
+
 
 #error-message {
     color: var(--segunda-cor);
