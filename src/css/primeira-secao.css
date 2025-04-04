@@ -1,7 +1,7 @@
 @import url(../css/padrao.css);
 
 .background{
-    height: 100vh;
+    height: 80vh;
     background-color: var(--background-home);
     background-image: url(../img/banner-teste.jpg);
     background-size: cover;
