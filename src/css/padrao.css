@@ -18,9 +18,7 @@
     --border-radius: 24px;
 }
 html{
-    /* Máximo de largura */
     max-width: 1920px;
-    /* Largura */
     width: 100%;
     /* Margem (empurra pra fora) */
     margin: 0;
@@ -31,12 +29,10 @@ html{
 }
 * {
     margin: 0;
-    /* Padding (empurra pra dentro) */
     padding: 0;
     box-sizing: border-box;
 }
 body {
-    /* Fonte usada no site */
     font-family: "Poppins", sans-serif;
     background-color: var(--background);
 }
@@ -49,14 +45,12 @@ figure {
     margin: 0;
 }
 h1 {
-    /* Tamanho da letra */
     font-size: 1.6875rem;
 }
 h2 {
     font-size: 1.5rem;
 }
 a {
-    /* Decoração do texto */
     text-decoration: none;
     color: var(--terceira-cor);
 }
