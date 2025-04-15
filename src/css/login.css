@@ -1,0 +1,177 @@
+.wrapper-login{
+    background-color: var(--background);
+    height: 100vh;
+    width: max(40%, 600px);
+    padding: 10px;
+    border-radius: 0 20px 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--terceira-cor);
+}
+
+form {
+    width: min(400px, 100%);
+    margin-top: 20px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+form > div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+form label{
+    flex-shrink: 0;
+    height: 50px;
+    width: 50px;
+    background-color: var(--primeira-cor);
+    fill: var(--background-home);
+    color: var(--background-home);
+    border-radius: 10px 0 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form input{
+    box-sizing: border-box;
+    flex-grow: 1;
+    min-width: 0;
+    height: 50px;
+    padding: 1em;
+    font: inherit;
+    border-radius: 0 10px 10px 0;
+    border: none;
+    border-left: none;
+    border: 2px solid var(--input);
+    background-color: var(--input);
+    transition: 150ms ease;
+}
+
+form input:hover{
+    border: 2px solid var(--quarta-cor);
+}
+
+form input:focus{
+    outline: none;
+}
+
+div:has(input:focus) > label{
+    background-color: var(--terceira-cor);
+}
+
+form input::placeholder{
+    color: var(--terceira-cor);
+}
+
+form button{
+    margin-top: 10px;
+    border: none;
+    border-radius: 1000px;
+    padding: .85em 4em;
+    background-color: var(--primeira-cor);
+    color: var(--background);
+    font: inherit;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 150ms ease;
+}
+
+form p{
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--terceira-cor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+}
+
+/* Hide the default checkbox */
+form input[type="checkbox"] {
+    display: none; /* Hides the default checkbox */
+}
+
+/* Style the custom checkbox */
+form input[type="checkbox"] + label {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--terceira-cor);
+    border-radius: 4px;
+    background-color: var(--background);
+    cursor: pointer;
+    position: relative;
+    transition: background-color 150ms ease, border-color 150ms ease;
+}
+
+form input[type="checkbox"]:checked + label {
+    background-color: var(--terceira-cor);
+    border-color: var(--terceira-cor);
+}
+
+form input[type="checkbox"]:checked + label:before {
+    content: '✔';
+    color: var(--background); 
+    font-size: 18px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+form button:hover{
+    background-color: var(--terceira-cor);
+}
+
+form button:focus{
+    outline: none;
+    background-color: var(--terceira-cor);
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+@media(max-width: 1100px){
+    .wrapper-login{
+        width: min(600px, 100%);
+    }
+}
+
+form div.incorreto label{
+    background-color: var(--segunda-cor);
+}
+
+form div.incorreto input{
+    border: 2px solid var(--segunda-cor);
+}
+
+form div.incorreto p{
+    color: var(--segunda-cor);
+}
+
+form div.incorreto input[type="checkbox"] + label {
+    border: 2px solid var(--segunda-cor);
+    background-color: var(--background);
+}
+
+
+#error-message {
+    color: var(--segunda-cor);
+}

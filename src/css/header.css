@@ -1,37 +1,57 @@
 @import url(../css/padrao.css);
-header {
+nav {
     background: var(--primeira-cor);
     box-shadow: var(--box-shadow);
+    position: relative;
 }
-.navbar figure {
-    width: 7.75rem;
-    height: 5.3125rem;
-    display: flex; 
-    justify-content: center;
+
+nav ul{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
     align-items: center;
 }
-.navbar figure a {
+
+nav li{
+    height: 70px;
+}
+
+nav a{
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    color: var(--branco);
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+}
+
+nav a:hover{
+    background: var(--terceira-cor);
+    transition: all 0.3s ease-in-out;
+}
+
+nav li:first-child {
+    margin-right: auto;
+}
+
+nav figure {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav figure a {
     color: var(--branco);
     font-weight: 400;
     font-size: 1.5rem;
     letter-spacing: 5px;
     transition: .5s ease;
 }
-.navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-}
-nav a {
-    color: var(--branco);
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: 300;
-    font-size: 0.75rem;
-    padding: 0px 0.625rem 0px 0.625rem;
-    transition: 0.5s ease;
-}
-nav a:hover, .navbar figure a:hover {
-    color: var(--cinza);
+
+nav figure a:hover{
+    background: var(--primeira-cor);
+    transition: 150ms ease;
 }
