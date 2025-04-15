@@ -1,6 +1,6 @@
 const baseUrl = 'https://go-wash-api.onrender.com/api';
 
-async function FazerLogin(email, password){
+async function Login(email, password){
     let userLogin =  {
         "email": email,
         "password": password,
@@ -19,6 +19,15 @@ async function FazerLogin(email, password){
     
     let result = await response.json()
     
+    if(response.ok) {
+        document.cookie = `token=${result.access_token}`;
+        document.cookie = `token_type=${result.token_type}`;
+        document.cookie = `expires_in=${result.expires_in}`;
+        document.cookie = `user=${JSON.stringify(result.user)}`;
+
+        location.replace("index.html")
+    }
+
     return {
         status: response.status,
         message: result
@@ -33,10 +42,6 @@ async function Register(name, birthday, email, cpf_cnpj, password){
         "cpf_cnpj": cpf_cnpj,
         "terms": 1,
         "birthday": birthday
-    }
-    if (password.length < 6) {
-        alert('A senha deve ter 6 dígitos')
-        return
     }
 
     const response = await fetch(baseUrl + '/user', {
@@ -55,4 +60,4 @@ async function Register(name, birthday, email, cpf_cnpj, password){
     }
 }
 
-export { FazerLogin, Register };
+export { Login, Register };
