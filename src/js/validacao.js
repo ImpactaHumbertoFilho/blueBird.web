@@ -1,4 +1,4 @@
-import { Register, FazerLogin } from "./User.js";
+import { Register, Login } from "./User.js";
 
 const form = document.getElementById('Form');
 
@@ -36,7 +36,7 @@ form.addEventListener('submit', async (e) => {
     } else {
         erros = coletarLoginFormErros(emailInput.value, passwordInput.value);
         if (erros.length === 0){
-            const response = await FazerLogin(emailInput.value, passwordInput.value);
+            const response = await Login(emailInput.value, passwordInput.value);
             console.log(response.message)
         }
     }
