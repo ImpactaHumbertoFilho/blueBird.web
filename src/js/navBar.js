@@ -1,14 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
     const navLogin = document.getElementById("nav-login");
+    const userJson = localStorage.getItem("user");
 
-    const userCookie = document.cookie
-        .split('; ')
-        .find(row => row.startsWith('user='));
-    
-    if (userCookie) {
-        const user = JSON.parse(decodeURIComponent(userCookie.split('=')[1]));
-
-        console.log(user)
+    if (userJson) {
+        const user = JSON.parse(decodeURIComponent(userJson));
 
         navLogin.innerHTML = `<a href="profile.html">Olá, ${user.name}</a>`;
     } else {

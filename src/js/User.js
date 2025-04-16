@@ -20,11 +20,11 @@ async function Login(email, password){
     let result = await response.json()
     
     if(response.ok) {
-        document.cookie = `token=${result.access_token}`;
-        document.cookie = `token_type=${result.token_type}`;
-        document.cookie = `expires_in=${result.expires_in}`;
-        document.cookie = `user=${JSON.stringify(result.user)}`;
-
+        localStorage.setItem("token", result.access_token)
+        localStorage.setItem("token_type", result.token_type)
+        localStorage.setItem("expires_in", result.expires_in)
+        localStorage.setItem("user", JSON.stringify(result.user))
+        
         location.replace("index.html")
     }
 
