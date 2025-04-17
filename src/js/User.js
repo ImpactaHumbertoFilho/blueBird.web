@@ -60,4 +60,40 @@ async function Register(name, birthday, email, cpf_cnpj, password){
     }
 }
 
-export { Login, Register };
+async function Logout(){
+    try{
+        const response = await fetch(baseUrl + '/logout', {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': localStorage.getItem("token_type") + ' ' + localStorage.getItem("token")
+            }
+        });
+        
+        if(response.ok || true) {
+            localStorage.removeItem("token")
+            localStorage.removeItem("token_type")
+            localStorage.removeItem("expires_in")
+            localStorage.removeItem("user")
+            
+            location.replace("index.html")
+        }
+        
+        let result = await response.json()
+        
+        return {
+            status: response.status,
+            message: result
+        }
+    }
+    catch(error){
+        console.error("Error during logout:", error);
+        
+        return {
+            status: 500,
+            message: "Erro no logout"
+        }
+    }
+}
+
+export { Login, Register, Logout };
