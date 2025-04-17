@@ -3,6 +3,7 @@ nav {
     background: var(--primeira-cor);
     box-shadow: var(--box-shadow);
     position: relative;
+    padding: 10px 10%;
 }
 
 nav ul{
@@ -15,6 +16,9 @@ nav ul{
 
 nav li{
     height: 70px;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
 }
 
 nav a{
@@ -27,7 +31,7 @@ nav a{
     align-items: center;
 }
 
-nav a:hover{
+nav li a:hover{
     background: var(--terceira-cor);
     transition: all 0.3s ease-in-out;
 }
@@ -41,6 +45,7 @@ nav figure {
     padding: 0;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 nav figure a {
@@ -54,4 +59,89 @@ nav figure a {
 nav figure a:hover{
     background: var(--primeira-cor);
     transition: 150ms ease;
+}
+
+nav .sub-menu-wrap{
+    position: absolute;
+    top: 100%;
+    right: 10%;
+    width: 320px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+}
+
+nav .sub-menu-wrap.open-menu{
+    max-height: 400px;
+}
+
+nav .sub-menu {
+    background: var(--branco);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    margin: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+nav .sub-menu hr {
+    border: 0;
+    height: 1px;
+    width: 100%;
+    background: var(--cinza);
+    margin: 15px 0 10px;
+}
+
+.user-info{
+    display: flex;
+    align-items: center;
+}
+
+.user-info h3{
+    font-weight: 500px;
+    color: var(--primeira-cor);
+}
+
+.sub-menu-link {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--terceira-cor);
+    margin: 12px 0;
+}
+
+.sub-menu-link p {
+    width: 100%;
+}
+
+.sub-menu-link:hover a{
+    background-color: var(--branco);
+}
+
+.sub-menu-link:hover p{
+    font-weight: 600;
+}
+
+.sub-menu-link span {
+    font-size: 22px;
+    transition: transform 0.5s;
+}
+.sub-menu-link:hover span {
+    transform: translateX(5px);
+}
+
+.sub-menu-link:hover{
+    background: var(--branco);
+}
+
+.user-icon{
+    border-radius: 50%;
+    padding: 5px;
+    margin: 0 10px;
+    background: var(--terceira-cor);
+}
+
+.user-icon:hover{
+    background: var(--azul-footer);
+    transition: all 0.3s ease-in-out;
 }
