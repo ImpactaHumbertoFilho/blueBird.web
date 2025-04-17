@@ -1,4 +1,5 @@
 @import url(../css/padrao.css);
+
 nav {
     background: var(--primeira-cor);
     box-shadow: var(--box-shadow);
@@ -35,6 +36,7 @@ nav a{
 nav li a:hover{
     background: var(--terceira-cor);
     transition: all 0.3s ease-in-out;
+    text-decoration: underline;
 }
 
 nav li:first-child {

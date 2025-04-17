@@ -1,3 +1,11 @@
+// filepath: c:\Users\hleit\Desktop\Faculdade\Web\blueBird.web\src\js\navBar.js
+import { Logout } from './User.js';
+
+function OpenMenu() {
+    let subMenu = document.getElementById("sub-menu-wrap");
+    subMenu.classList.toggle("open-menu");
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     const navLogin = document.getElementById("nav-login");
     const userJson = localStorage.getItem("user");
@@ -7,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         navLogin.innerHTML = `
             <figure class="user-icon">
-                <svg onclick="OpenMenu()" xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="50px" fill="#e3e3e3"><path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Z"/></svg>
+                <svg id="open-menu-icon" xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="50px" fill="#e3e3e3"><path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Z"/></svg>
             </figure>
             <div class = "sub-menu-wrap" id="sub-menu-wrap">
                 <div class="sub-menu">
@@ -19,12 +27,21 @@ document.addEventListener("DOMContentLoaded", () => {
                         <p>Configurações</p>
                         <span>></span>
                     </a>
-                    <a href="index.html" class="sub-menu-link" onclick="Logout()">
+                    <a href="index.html" class="sub-menu-link" id="logout-link">
                         <p>Sair</p>
                         <span>></span>
                     </a>
                 </div>
             </div>`;
+
+        const logoutLink = document.getElementById("logout-link");
+        logoutLink.addEventListener("click", (event) => {
+            event.preventDefault();
+            Logout();
+        });
+
+        const openMenuIcon = document.getElementById("open-menu-icon");
+        openMenuIcon.addEventListener("click", OpenMenu);
     } else {
         navLogin.innerHTML = `
             <a href="login.html">
@@ -33,18 +50,3 @@ document.addEventListener("DOMContentLoaded", () => {
             </a>`;
     }
 });
-
-function OpenMenu(){
-    let subMenu = document.getElementById("sub-menu-wrap");
-
-    subMenu.classList.toggle("open-menu");
-}
-
-function Logout(){
-    localStorage.removeItem("token")
-    localStorage.removeItem("token_type")
-    localStorage.removeItem("expires_in")
-    localStorage.removeItem("user")
-    
-    location.replace("index.html")
-}
