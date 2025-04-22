@@ -23,26 +23,32 @@ allInputs.forEach(input => {
 
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
-
+    let response = {
+        'status': 200
+    };
     let erros = [];
     
     if (nameInput) {
         erros = coletarCadastroFormErros(emailInput.value, passwordInput.value, nameInput.value, birthdayInput.value, cpf_cnpjInput.value, termsInput.checked);
         if (erros.length === 0){
-            const response = await Register(nameInput.value, birthdayInput.value, emailInput.value, cpf_cnpjInput.value, passwordInput.value);
+            response = await Register(nameInput.value, birthdayInput.value, emailInput.value, cpf_cnpjInput.value, passwordInput.value);
             console.log(response.message)
-            coletarCadastroApiErros(response);
+            erros = coletarApiErros(response);
         }
     } else {
         erros = coletarLoginFormErros(emailInput.value, passwordInput.value);
         if (erros.length === 0){
-            const response = await Login(emailInput.value, passwordInput.value);
+            response = await Login(emailInput.value, passwordInput.value);
             console.log(response.message)
+            erros = coletarLoginApiErros(response);
         }
     }
 
     if (erros.length > 0) {
-        error_message.innerText = erros.join('. ');
+        error_message.innerText = erros.join(' ');
+    }
+    else{
+        location.replace("index.html")
     }
 });
 
@@ -62,7 +68,21 @@ function coletarLoginFormErros(email, senha) {
     return erros;
 }
 
-function coletarCadastroApiErros(response) {
+function coletarLoginApiErros(response) {
+    let erros = [];
+
+    if (response.status === 401) {
+        const apiErrors = response.message.data.errors;
+
+        erros.push(apiErrors);
+    }
+
+    error_message.innerText = erros.join('. ');
+
+    return erros;
+}
+
+function coletarApiErros(response) {
     let erros = [];
 
     if (response.status === 422) {

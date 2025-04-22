@@ -1,5 +1,9 @@
 const baseUrl = 'https://go-wash-api.onrender.com/api';
 
+// Usuario teste
+// peregrina7740@uorak.com
+// 123456
+
 async function Login(email, password){
     let userLogin =  {
         "email": email,
@@ -24,8 +28,6 @@ async function Login(email, password){
         localStorage.setItem("token_type", result.token_type)
         localStorage.setItem("expires_in", result.expires_in)
         localStorage.setItem("user", JSON.stringify(result.user))
-        
-        location.replace("index.html")
     }
 
     return {
@@ -62,28 +64,32 @@ async function Register(name, birthday, email, cpf_cnpj, password){
 
 async function Logout(){
     try{
-        const response = await fetch(baseUrl + '/logout', {
+        localStorage.removeItem("token")
+        localStorage.removeItem("token_type")
+        localStorage.removeItem("expires_in")
+        localStorage.removeItem("user")
+        
+        location.replace("index.html")
+
+        const response = await fetch('https://go-wash-api.onrender.com/logout', {
             method: "POST",
             headers: {
-                'Content-Type': 'application/json',
-                'Authorization': localStorage.getItem("token_type") + ' ' + localStorage.getItem("token")
+                'Authorization': 'Bearer ' + localStorage.getItem("token")
             }
         });
         
         if(response.ok || true) {
-            localStorage.removeItem("token")
-            localStorage.removeItem("token_type")
-            localStorage.removeItem("expires_in")
-            localStorage.removeItem("user")
+            let result = await response.json()
             
-            location.replace("index.html")
+            return {
+                status: response.status,
+                message: result
+            }
         }
         
-        let result = await response.json()
-        
         return {
-            status: response.status,
-            message: result
+            status: 401,
+            message: "Erro ao fazer logout"
         }
     }
     catch(error){
