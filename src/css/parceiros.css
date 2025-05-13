@@ -1,0 +1,19 @@
+@import url(./padrao.css);
+
+.parceiros {
+    background-color: #B3C8CF;
+}
+.nossos-parceiros{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 3rem 0;
+}
+
+.titulo-parceiros{
+    font-size: 32px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #ccc;
+    margin-bottom: 2rem;
+}

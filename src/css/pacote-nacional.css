@@ -1,0 +1,122 @@
+@import url(./padrao.css);
+
+.pacote {
+    width: 300px;
+    height: 560px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: .5s ease;
+    cursor: pointer;
+}
+.pacote:hover {
+    transform: scale(1.070);
+    background-color: #ccc;
+}
+.imagem-pacote img {
+    width: 300px;
+    z-index: 5;
+}
+
+.voos-nacionais {
+    padding-top: 2em;
+    padding-bottom: 5rem;
+}
+.voos-nacionais h2 {
+    font-size: 32px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #ccc;
+    margin-bottom: 2rem;
+}
+
+.texto-pacote {
+    padding: 0 15px;
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.pacotes-nacionais {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 3rem;
+}
+.titulo-pacote {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 15px;
+}
+.icones-pacote img {
+    width: 30px;
+    height: 30px;
+}
+.local {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.dias {
+    font-size: 16px;
+    font-weight: 600;
+    text-align: justify;
+}
+    
+
+.botao-saiba-mais {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    padding-top: 10rem;
+}
+
+.nuvens-saiba-mais img {
+    width: 180px;
+}
+
+a.saiba-mais {
+    width: 400px;
+    height: 70px;
+    background: var(--primeira-cor);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    transition: .5s ease;
+    border-radius: var(--border-radius);
+}
+a.saiba-mais:hover {
+    background: var(--cinza)
+}
+
+.nuvens-saiba-mais {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img.primeira-nuvem {
+    position: absolute;
+    transform: translate(-210px, -10px);
+    z-index: 3;
+    width: 225px;
+    cursor: pointer;
+}
+
+img.segunda-nuvem {
+    position: absolute;
+    transform: translate(-231px, -50px);
+    cursor: pointer;
+}
+
+img.terceira-nuvem {
+    position: absolute;
+    transform: translate(195px, -50px);
+    width: 200px;
+    cursor: pointer;
+}

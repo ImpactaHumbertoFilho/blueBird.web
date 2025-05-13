@@ -13,6 +13,11 @@
     --box-shadow: 0 0.9375rem 10px -0.9375rem #111;
     --container-destino: #F4F1DE;
     --border-radius: 24px;
+    --parte-branca: #F1F0E8;
+    --titulo-newsletter: #008DDA;
+    --forms-newsletter: #78B3CE;
+    --p-newsletter: #AAA6A0;
+    --parceiros: #B3C8CF;
 }
 html{
     width: 100%;
@@ -55,4 +60,5 @@ a {
     background-position: center;
     background-repeat: no-repeat;
     overflow: hidden;
+    background-attachment: fixed;
 }
