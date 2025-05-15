@@ -1,5 +1,4 @@
 // filepath: c:\Users\hleit\Desktop\Faculdade\Web\blueBird.web\src\js\navBar.js
-import { Logout } from './User.js';
 
 function OpenMenu() {
     let subMenu = document.getElementById("sub-menu-wrap");
