@@ -146,3 +146,23 @@ function coletarCadastroFormErros(email, senha, nome, aniversario, cpf_cnpj, ter
 
     return erros;
 }
+
+const enderecoforms = document.getElementById("form-endereco")
+const titulo = document.getElementById("titulo")
+const cep = document.getElementById("cep")
+const rua = document.getElementById("rua")
+const numero  = document.getElementById("numero")
+if (enderecoforms) {
+    enderecoforms.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const token = localStorage.getItem("token"); // Certifique-se de que esse token está no localStorage
+
+        await cadastrar(
+            titulo.value,
+            cep.value,
+            rua.value,
+            numero.value,
+        );
+    });
+}
