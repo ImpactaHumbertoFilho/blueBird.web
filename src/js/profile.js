@@ -13,4 +13,35 @@ document.addEventListener("DOMContentLoaded", () => {
             `;
     }
     return none;
+
 })
+async function cadastrar(titulo, cep, rua, numero,) 
+{
+    let endereco = 
+    {
+        "titulo": titulo,
+        "cep": cep,
+        "rua": rua,
+        "numero": numero
+    }
+    token = localStorage.getItem("token");
+
+    if (!token) {
+        console.error("Token não encontrado. Certifique-se de que o usuário está autenticado.");
+        return;
+    }
+
+    const resposta = await fetch("http://localhost:8080/endereco",
+    {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            Autorization: `Bearer ${token}`
+        },
+        body: JSON.stringify(endereco)
+    });
+    if (!resposta.ok) {
+        console.error("Erro ao cadastrar endereço:", resposta.statusText);
+        return;
+    }
+}
