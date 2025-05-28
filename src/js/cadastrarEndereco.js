@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", () => {
     const titulo = document.getElementById("titulo");  
     const cep = document.getElementById("cep");
@@ -53,5 +52,3 @@ async function cadastrar(titulo, cep, rua, numero) {
     console.log("Endereço cadastrado com sucesso!");
     location.reload()
 }
-
-

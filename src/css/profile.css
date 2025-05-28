@@ -11,12 +11,14 @@
     width: 30%;
     height: 100%;
     background-color: var(--terceira-cor);
-    color: var(--branco);
+    color: var(
+    --branco);
     display: flex;
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
     padding: 5rem 2rem;
+    box-shadow: var(--box-shadow);
 }
 
 .lado-azul h1 {
@@ -43,8 +45,10 @@
     height: 100%;
     padding: 5rem 0;
     width: 70%;
-
+    overflow-y: auto;
+    max-height: 100vh;
 }
+
 
 #lista-de-endereco,
 .endereco-item {
@@ -65,9 +69,9 @@
     padding: 1rem 0;
     width: 100%;
     font-size: 1.2rem;
-    box-shadow: var(--box-shadow);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: var(--border-radius);
-    background: #f1f1f1;
+    background: #fdfdfd;
     text-align: left;
     display: flex;
     flex-direction: row;
@@ -86,7 +90,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: var(--terceira-cor);
+    background: var(--segunda-cor);
     border-radius: var(--border-radius);
 }
 
@@ -107,6 +111,7 @@
 .adicionar-endereco input {
     padding: 1rem;
     margin: 0;
+    width: 100%;
 }
 
 .adicionar-endereco a {
@@ -131,13 +136,36 @@
     margin-top: 1rem;
 }
 
-.adicionar-endereco {
-    margin-top: 2rem;
-}
-
 .titulo a {
     color: #aaa;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.form-group {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    text-align: left;
+}
+
+.form-group label {
+    margin: 10px 0;
+}
+
+
+button#adicionar-endereco-link {
+    width: 150px;
+    margin: 25px 0;
+    height: 40px;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    color: var(--branco);
+    background: var(--segunda-cor);
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
