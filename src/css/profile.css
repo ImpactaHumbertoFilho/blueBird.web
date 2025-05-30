@@ -92,6 +92,8 @@
     align-items: center;
     background: var(--segunda-cor);
     border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: .3s ease-in-out;
 }
 
 .icon-endereco svg {
@@ -168,4 +170,19 @@ button#adicionar-endereco-link {
     font-weight: 600;
     cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+#tipo-endereco, #rua-endereco, #numero-endereco, #cep-endereco {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#tipo-endereco h3, #rua-endereco h3, #numero-endereco h3, #cep-endereco h3 {
+    color: var(--primeira-cor);
+}
+
+.icon-endereco:hover {
+    transform: scale(1.080);
 }
