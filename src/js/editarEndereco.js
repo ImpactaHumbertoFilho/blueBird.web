@@ -1,3 +1,31 @@
+document.addEventListener('DOMContentLoaded', function () {
+    const modal = document.querySelector('.modal-editar-endereco');
+    const btnCancelar = document.getElementById('btn-cancelar-edicao');
+
+    document.addEventListener('click', function (e) {
+        const botaoEditar = e.target.closest('.abrir-modal-editar');
+        if (botaoEditar) {
+            e.preventDefault();
+            const id = botaoEditar.dataset.id;
+
+            modal.classList.add('ativado');
+            coletarDetalhes(id);
+
+            const btnEditar = document.getElementById('btn-editar-endereco');
+            btnEditar.onclick = async function () {
+                const sucesso = await editar(id);
+                if (sucesso) {
+                    modal.classList.remove('ativado');
+                }
+            };
+        }
+    });
+
+    btnCancelar.addEventListener('click', function () {
+        modal.classList.remove('ativado');
+    });
+});
+
 async function editar(id) {
     const endereco = {
         "title": document.getElementById('titulo-input').value,
@@ -28,8 +56,9 @@ async function editar(id) {
     if (!resposta.ok) {
         const erro = await resposta.json();
         console.error("Erro ao editar endereço:", erro);
-        return;
+        return false;
     }
+    return true;
 
 }
 
@@ -52,6 +81,9 @@ async function coletarDetalhes(id) {
         document.getElementById('rua-input').value = data.data.address || '';
         document.getElementById('numero-input').value = data.data.number || '';
         document.getElementById('complemento-input').value = data.data.complement || '';
+
+            modal.classList.remove('ativado');
+
     } else {
         console.error("Erro ao buscar endereços");
     }

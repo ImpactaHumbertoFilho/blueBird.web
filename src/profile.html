@@ -57,7 +57,13 @@
                                 <label for="numero">Número</label>
                                 <input type="text" id="numero" name="numero" placeholder="Digite o número" required>
                             </div>
+                            <div class="form-group">
+                                <label for="complemento">Complemento</label>
+                                <input type="text" id="complemento" name="complemento"
+                                    placeholder="Digite o complemento">
+                            </div>
                             <button type="submit" id="adicionar-endereco-link">Adicionar</button>
+
                         </form>
                     </div>
                 </div>
@@ -66,11 +72,35 @@
         <div class="lado-branco">
             <div class="wrapper">
                 <div id="lista-de-endereco">
-
+                </div>
+                <div class="modal-editar-endereco">
+                    <div class="editar-campos-endereco">
+                        <h1>Editar Endereço</h1>
+                    </div>
+                    <form id="form-editar-endereco">
+                        <label for="titulo-editar">Título</label>
+                        <input type="text" id="titulo-input" name="titulo-editar" placeholder="Ex: Casa, Trabalho"
+                            required>
+                        <label for="cep-editar">CEP</label>
+                        <input type="text" id="cep-input" name="cep-editar" placeholder="Digite o CEP" required>
+                        <label for="rua-editar">Rua</label>
+                        <input type="text" id="rua-input" name="rua-editar" placeholder="Digite a rua" required>
+                        <label for="numero-editar">Número</label>
+                        <input type="text" id="numero-input" name="numero-editar" placeholder="Digite o número"
+                            required>
+                        <label for="complemento-editar">Complemento</label>
+                        <input type="text" id="complemento-input" name="complemento-editar"
+                            placeholder="Digite o complemento">
+                    </form>
+                    <div class="botoes-editar">
+                        <button id="btn-editar-endereco">Editar</button>
+                        <button id="btn-cancelar-edicao">Cancelar</button>
+                    </div>
                 </div>
 
             </div>
         </div>
+    </div>
     </div>
     <footer>
         <div class="footer-caixa wrapper">
@@ -115,7 +145,7 @@
     <script src="./js/navBar.js"></script>
     <script src="./js/cadastrarEndereco.js"></script>
     <script src="./js/listarEndereco.js"></script>
-    <!-- <script src="./js/atualizarEndereco.js"></script> -->
+    <script src="./js/editarEndereco.js"></script>
     <script src="./js/deletarEndereco.js"></script>
 </body>
 

@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const cep = document.getElementById("cep");
     const rua = document.getElementById("rua");
     const numero = document.getElementById("numero");
+    const complemento = document.getElementById("complemento");
     const cadastrarEnderecoBotao = document.getElementById("adicionar-endereco-link");
 
     cadastrarEnderecoBotao.addEventListener("click", async (e) => {
@@ -12,17 +13,25 @@ document.addEventListener("DOMContentLoaded", () => {
             titulo.value.trim(),
             cep.value.trim(),
             rua.value.trim(),
-            numero.value.trim()
+            numero.value.trim(),
+            complemento.value.trim() || "" 
         );
+
+        titulo.value = "";
+        cep.value = "";
+        rua.value = "";
+        numero.value = "";
+        complemento.value = "";
     });
 });
 
-async function cadastrar(titulo, cep, rua, numero) {
+async function cadastrar(titulo, cep, rua, numero, complemento) {
     const endereco = {
         "title": titulo,
         "cep": cep,
         "address": rua,
         "number": numero,
+        "complement": complemento || ""  
     };
 
     console.log("Enviando para a API:", endereco); 
@@ -50,5 +59,5 @@ async function cadastrar(titulo, cep, rua, numero) {
     }
 
     console.log("Endereço cadastrado com sucesso!");
-    location.reload()
+    await listagem();  
 }

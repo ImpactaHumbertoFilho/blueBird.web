@@ -1,3 +1,12 @@
+document.addEventListener("click", async (e) => {
+    if (e.target.closest(".deletar-endereco")) {
+        const id = e.target.closest(".deletar-endereco").getAttribute("data-id");
+        if (confirm("Tem certeza que deseja deletar este endereço?")) {
+            await deletar(id);
+            listagem(); 
+        }
+    }
+});
 async function deletar(id) {
     const token = localStorage.getItem("token");
 
