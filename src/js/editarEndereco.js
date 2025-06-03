@@ -44,7 +44,7 @@ async function editar(id) {
         return;
     }
 
-    const resposta = await fetch("https://go-wash-api.onrender.com/api/auth/address/"+ id, {
+    const resposta = await fetch("https://go-wash-api.onrender.com/api/auth/address/" + id, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -58,9 +58,11 @@ async function editar(id) {
         console.error("Erro ao editar endereço:", erro);
         return false;
     }
-    return true;
 
+    location.reload(); 
+    return true;
 }
+
 
 async function coletarDetalhes(id) {
     let token = localStorage.getItem("token");
