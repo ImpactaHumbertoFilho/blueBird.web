@@ -76,7 +76,8 @@ async function coletarDetalhes(id) {
 
     if (api.ok) {
         let data = await api.json();
-        console.log(data);
+        console.log("Busquei os detahes");
+        console.log(data)
 
         document.getElementById('titulo-input').value = data.data.title || '';
         document.getElementById('cep-input').value = data.data.cep || '';
@@ -84,7 +85,7 @@ async function coletarDetalhes(id) {
         document.getElementById('numero-input').value = data.data.number || '';
         document.getElementById('complemento-input').value = data.data.complement || '';
 
-            modal.classList.remove('ativado');
+        return data.data
 
     } else {
         console.error("Erro ao buscar endereços");
