@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clima</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #4fc3f7 0%, #1976d2 100%);
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+    }
+
+    .container {
+        background: #fff;
+        max-width: 400px;
+        margin: 60px auto;
+        padding: 32px 24px;
+        border-radius: 16px;
+        box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+    }
+
+    .search {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 24px;
+    }
+
+    #pesquisarInput {
+        flex: 1;
+        padding: 10px 12px;
+        border: 1px solid #bdbdbd;
+        border-radius: 6px;
+        font-size: 16px;
+        outline: none;
+        transition: border 0.2s;
+    }
+
+    #pesquisarInput:focus {
+        border-color: #1976d2;
+    }
+
+    #pesquisar-clima {
+        background: #1976d2;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        padding: 10px 18px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background 0.2s;
+    }
+
+    #pesquisar-clima:hover {
+        background: #1565c0;
+    }
+
+    .clima {
+        text-align: center;
+        margin-top: 24px;
+    }
+
+    #cidade {
+        font-size: 2rem;
+        color: #1976d2;
+        margin-bottom: 8px;
+    }
+
+    #temperatura {
+        font-size: 1.2rem;
+        color: #424242;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="search">
+            <input type="text" id="pesquisarInput" placeholder="Digite o nome de uma cidade...">
+            <button id="pesquisar-clima">Buscar</button>
+        </div>
+        <div class="clima">
+           
+        </div>
+
+    </div>
+
+</body>
+
+<script src="./index.js"></script>
+</html>
